@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import { Moon, Sun, ArrowRight, ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { Moon, Sun, ArrowRight, ArrowLeft } from 'lucide-react';
 
 // ==========================================
 // 1. PORTFOLIO DATA (بياناتك وصورك)
@@ -64,208 +64,46 @@ const PORTFOLIO_DATA = {
     },
   ],
   clients: [
-    {
-      id: 1,
-      name: 'MBC MASR',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/0/04/MBC_Masr_Logo.svg',
-    },
-    {
-      id: 2,
-      name: 'WARNERBROS',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Warner_Bros._logo_2023.svg',
-    },
-    {
-      id: 3,
-      name: 'Al-Saudia TV',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Al-Saudia_TV_Logo_2018.png',
-    },
-    {
-      id: 4,
-      name: 'ejs',
-      logo: 'https://i.postimg.cc/cCfjkt0q/Egyptian-Japanese-Schools-fnl.png',
-    },
-    {
-      id: 5,
-      name: 'moe',
-      logo: 'https://upload.wikimedia.org/wikipedia/ar/8/81/Ministry_of_Education_%28Egypt%29_logo_%28wikiar%29.png',
-    },
-    {
-      id: 6,
-      name: 'stc',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/STC-01.svg',
-    },
-
-    {
-      id: 8,
-      name: 'qeesh',
-      logo: 'https://images.squarespace-cdn.com/content/v1/608bec48ef687015f7fb658e/93f1f341-aeeb-43de-8926-c3a600dad7f3/Qeesh-logo_0003_white.png?format=1500w',
-    },
-    {
-      id: 9,
-      name: 'cps',
-      logo: 'https://coproductionsalon.com/storage/images/CoSalon_logo.svg',
-    },
-    {
-      id: 10,
-      name: 'ag',
-      logo: 'https://i.postimg.cc/9Q8tGXZq/Asset-3.png',
-    },
-    {
-      id: 10,
-      name: 'baha',
-      logo: 'https://i.postimg.cc/rm64JDmd/Asset-2.png',
-    },
-    {
-      id: 10,
-      name: 'ncn',
-      logo: 'https://i.postimg.cc/ZRVTqQ1Y/image.png',
-    },
-    {
-      id: 10,
-      name: 'tala',
-      logo: 'https://i.postimg.cc/5tmJPG9f/Asset-4.png',
-    },
-    {
-      id: 10,
-      name: 'np',
-      logo: 'https://i.postimg.cc/HLtmSKWd/Asset-5.png',
-    },
-    {
-      id: 10,
-      name: 'slighty',
-      logo: 'https://i.postimg.cc/W47V9Kp2/Asset-7.png',
-    },
-    {
-      id: 10,
-      name: 'dau',
-      logo: 'https://i.postimg.cc/YCHqbQNx/DAU-idsjo-Jbde-J-0.png',
-    },
-    {
-      id: 10,
-      name: 'aldirah',
-      logo: 'https://i.postimg.cc/5ydZbS2s/Asset-18.png',
-    },
-    {
-      id: 10,
-      name: 'af',
-      logo: 'https://i.postimg.cc/76gKM8qs/Asset-2.png',
-    },
-    {
-      id: 10,
-      name: 'sol',
-      logo: 'https://i.postimg.cc/G3KQcjt9/Asset-8.png',
-    },
-    {
-      id: 10,
-      name: 'uaesg',
-      logo: 'https://i.postimg.cc/gk53JtWc/Asset-7.png',
-    },
-    {
-      id: 10,
-      name: 'eventy',
-      logo: 'https://i.postimg.cc/9FSyMghQ/Asset-8.png',
-    },
-    {
-      id: 10,
-      name: 'awad',
-      logo: 'https://i.postimg.cc/hvmQ7cg8/LW.png',
-    },
-    {
-      id: 10,
-      name: 'roose',
-      logo: 'https://i.postimg.cc/g2gjjnR7/Asset-2.png',
-    },
-    {
-      id: 10,
-      name: 'eage',
-      logo: 'https://i.postimg.cc/2S9jmgRF/logo.png',
-    },
-    {
-      id: 10,
-      name: 'moaaser',
-      logo: 'https://i.postimg.cc/j5DYcjDJ/image.png',
-    },
-    {
-      id: 10,
-      name: 'al emthaan',
-      logo: 'https://i.postimg.cc/rpgPv2Bp/image.png',
-    },
-    {
-      id: 10,
-      name: 'tayseer',
-      logo: 'https://i.postimg.cc/SK9B5PyG/arabic.png',
-    },
-    {
-      id: 10,
-      name: 'emc',
-      logo: 'https://i.postimg.cc/JhjFKBqN/Asset-1.png',
-    },
-    {
-      id: 10,
-      name: 'tahyamasr',
-      logo: 'https://i.postimg.cc/VvZZ59f0/LOGO-TAHYA-MASR-white.png',
-    },
-    {
-      id: 10,
-      name: 'minimetro',
-      logo: 'https://i.postimg.cc/B6qmg7tS/UFd-CCTb-VQ1UW5h-HCEd6B87SM.jpg',
-    },
-    {
-      id: 10,
-      name: 'metro',
-      logo: 'https://metro-website-images.s3.eu-west-1.amazonaws.com/plugins/user/images/Logo.svg',
-    },
-    {
-      id: 10,
-      name: 'manus',
-      logo: 'https://i.postimg.cc/NF2m7R8m/white.png',
-    },
-    {
-      id: 10,
-      name: 'my',
-      logo: 'https://i.postimg.cc/4dqBgfBR/Asset-1.png',
-    },
-    {
-      id: 10,
-      name: 'fl90',
-      logo: 'https://i.postimg.cc/bwpL8FHB/fel90-1.png',
-    },
-    {
-      id: 10,
-      name: 'kings cup',
-      logo: 'https://www.saff.com.sa/uploadcenter/saffchamplarge1716749366.png',
-    },
-    {
-      id: 10,
-      name: 'seh',
-      logo: 'https://i.postimg.cc/bNTk0YkS/u.png',
-    },
-    {
-      id: 10,
-      name: 'har',
-      logo: 'https://i.postimg.cc/RVRK1CKN/Untitled-1.png',
-    },
-    {
-      id: 10,
-      name: 'Sobek',
-      logo: 'https://i.postimg.cc/DZkSkRLj/Asset-1.png',
-    },
-    {
-      id: 10,
-      name: 'melon',
-      logo: 'https://i.postimg.cc/C5J581XY/MELON-LOGO.png',
-    },
-    {
-      id: 10,
-      name: 'Smartd',
-      logo: 'https://i.postimg.cc/TP8dpg1k/image.jpg',
-    },
-    
-    {
-      id: 7,
-      name: 'gs',
-      logo: 'https://i.postimg.cc/WtLR5hSQ/gs.png',
-    },
+    { id: 1, name: 'MBC MASR', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/04/MBC_Masr_Logo.svg' },
+    { id: 2, name: 'WARNERBROS', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Warner_Bros._logo_2023.svg' },
+    { id: 3, name: 'Al-Saudia TV', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d6/Al-Saudia_TV_Logo_2018.png' },
+    { id: 4, name: 'ejs', logo: 'https://i.postimg.cc/cCfjkt0q/Egyptian-Japanese-Schools-fnl.png' },
+    { id: 5, name: 'moe', logo: 'https://upload.wikimedia.org/wikipedia/ar/8/81/Ministry_of_Education_%28Egypt%29_logo_%28wikiar%29.png' },
+    { id: 6, name: 'stc', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/STC-01.svg' },
+    { id: 7, name: 'cps', logo: 'https://coproductionsalon.com/storage/images/CoSalon_logo.svg' },
+    { id: 8, name: 'ag', logo: 'https://i.postimg.cc/9Q8tGXZq/Asset-3.png' },
+    { id: 9, name: 'baha', logo: 'https://i.postimg.cc/rm64JDmd/Asset-2.png' },
+    { id: 10, name: 'ncn', logo: 'https://i.postimg.cc/ZRVTqQ1Y/image.png' },
+    { id: 11, name: 'tala', logo: 'https://i.postimg.cc/5tmJPG9f/Asset-4.png' },
+    { id: 12, name: 'np', logo: 'https://i.postimg.cc/HLtmSKWd/Asset-5.png' },
+    { id: 13, name: 'qeesh', logo: 'https://images.squarespace-cdn.com/content/v1/608bec48ef687015f7fb658e/93f1f341-aeeb-43de-8926-c3a600dad7f3/Qeesh-logo_0003_white.png?format=1500w' },
+    { id: 14, name: 'dau', logo: 'https://i.postimg.cc/YCHqbQNx/DAU-idsjo-Jbde-J-0.png' },
+    { id: 15, name: 'eventy', logo: 'https://i.postimg.cc/9FSyMghQ/Asset-8.png' },
+    { id: 16, name: 'awad', logo: 'https://i.postimg.cc/hvmQ7cg8/LW.png' },
+    { id: 17, name: 'emc', logo: 'https://i.postimg.cc/JhjFKBqN/Asset-1.png' },
+    { id: 18, name: 'roose', logo: 'https://i.postimg.cc/g2gjjnR7/Asset-2.png' },
+    { id: 19, name: 'my', logo: 'https://i.postimg.cc/4dqBgfBR/Asset-1.png' },
+    { id: 20, name: 'manus', logo: 'https://i.postimg.cc/NF2m7R8m/white.png' },
+    { id: 21, name: 'har', logo: 'https://i.postimg.cc/RVRK1CKN/Untitled-1.png' },
+    { id: 22, name: 'gs', logo: 'https://i.postimg.cc/WtLR5hSQ/gs.png' },
+    { id: 23, name: 'aldirah', logo: 'https://i.postimg.cc/5ydZbS2s/Asset-18.png' },
+    { id: 24, name: 'af', logo: 'https://i.postimg.cc/76gKM8qs/Asset-2.png' },
+    { id: 25, name: 'sol', logo: 'https://i.postimg.cc/G3KQcjt9/Asset-8.png' },
+    { id: 26, name: 'uaesg', logo: 'https://i.postimg.cc/gk53JtWc/Asset-7.png' },
+    { id: 27, name: 'metro', logo: 'https://metro-website-images.s3.eu-west-1.amazonaws.com/plugins/user/images/Logo.svg' },
+    { id: 28, name: 'slighty', logo: 'https://i.postimg.cc/W47V9Kp2/Asset-7.png' },
+    { id: 29, name: 'moaaser', logo: 'https://i.postimg.cc/j5DYcjDJ/image.png' },
+    { id: 30, name: 'al emthaan', logo: 'https://i.postimg.cc/rpgPv2Bp/image.png' },
+    { id: 31, name: 'tayseer', logo: 'https://i.postimg.cc/SK9B5PyG/arabic.png' },
+    { id: 32, name: 'eage', logo: 'https://i.postimg.cc/2S9jmgRF/logo.png' },
+    { id: 33, name: 'tahyamasr', logo: 'https://i.postimg.cc/VvZZ59f0/LOGO-TAHYA-MASR-white.png' },
+    { id: 34, name: 'minimetro', logo: 'https://i.postimg.cc/B6qmg7tS/UFd-CCTb-VQ1UW5h-HCEd6B87SM.jpg' },
+    { id: 35, name: 'melon', logo: 'https://i.postimg.cc/C5J581XY/MELON-LOGO.png' },
+    { id: 36, name: 'fl90', logo: 'https://i.postimg.cc/bwpL8FHB/fel90-1.png' },
+    { id: 37, name: 'kings cup', logo: 'https://www.saff.com.sa/uploadcenter/saffchamplarge1716749366.png' },
+    { id: 38, name: 'seh', logo: 'https://i.postimg.cc/bNTk0YkS/u.png' },
+    { id: 39, name: 'Sobek', logo: 'https://i.postimg.cc/DZkSkRLj/Asset-1.png' },
+    { id: 40, name: 'Smartd', logo: 'https://i.postimg.cc/TP8dpg1k/image.jpg' },
   ],
   // المشاريع (صور فقط للعرض المباشر)
   projects: [
@@ -394,6 +232,7 @@ export default function App() {
     'All',
     ...new Set(PORTFOLIO_DATA.projects.map((p) => p.category)),
   ];
+  
   const filteredProjects =
     activeFilter === 'All'
       ? PORTFOLIO_DATA.projects
@@ -518,9 +357,9 @@ export default function App() {
         }`}
       ></div>
 
-      {/* ====== النيفيجشن بار (Liquid Bubble) ====== */}
+      {/* ====== النيفيجشن بار ====== */}
       <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-fit flex justify-center">
-        <div className="relative flex items-center p-2 rounded-full bg-white/50 dark:bg-[#1a1a1a]/60 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-xl overflow-hidden">
+        <div className="relative flex items-center p-1.5 md:p-2 rounded-full bg-white/50 dark:bg-[#1a1a1a]/60 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-xl overflow-hidden">
           <div
             ref={navContainerRef}
             className="relative flex items-center overflow-x-auto hide-scrollbar px-1"
@@ -555,7 +394,7 @@ export default function App() {
                 key={section}
                 href={`#${section}`}
                 data-section={section}
-                className={`relative z-10 px-5 py-2.5 mx-1 text-sm font-bold capitalize rounded-full transition-colors duration-300 whitespace-nowrap cursor-pointer select-none ${
+                className={`relative z-10 px-3 md:px-5 py-2 mx-0.5 md:mx-1 text-xs md:text-sm font-bold capitalize rounded-full transition-colors duration-300 whitespace-nowrap cursor-pointer select-none ${
                   activeSection === section
                     ? isDark
                       ? 'text-white'
@@ -570,15 +409,15 @@ export default function App() {
             ))}
           </div>
 
-          <div className="pl-3 pr-2 border-l border-gray-400/30 dark:border-gray-600/50 ml-1 relative z-10 shrink-0">
+          <div className="pl-2 pr-1 md:pl-3 md:pr-2 border-l border-gray-400/30 dark:border-gray-600/50 ml-1 relative z-10 shrink-0">
             <button
               onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
+              className="p-1.5 md:p-2 rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors"
             >
               {isDark ? (
-                <Sun size={18} className="text-gray-300 hover:text-white" />
+                <Sun size={16} className="text-gray-300 hover:text-white" />
               ) : (
-                <Moon size={18} className="text-gray-700 hover:text-black" />
+                <Moon size={16} className="text-gray-700 hover:text-black" />
               )}
             </button>
           </div>
@@ -589,11 +428,11 @@ export default function App() {
         {/* ====== قسم البداية (HERO SECTION) ====== */}
         <section
           id="home"
-          className="min-h-screen flex items-center justify-center px-6 pt-28 pb-20"
+          className="min-h-[85vh] md:min-h-screen flex items-center justify-center px-6 pt-36 pb-12 md:pb-20"
         >
           <div className="container mx-auto max-w-5xl text-center">
             {/* 📸 صورة البروفايل بالإطار الزجاجي */}
-            <div className="relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-6 group">
+            <div className="relative w-32 h-32 md:w-44 md:h-44 mx-auto mb-6 group">
               <div className="absolute inset-0 rounded-full border border-white/20 dark:border-white/10 bg-white/10 dark:bg-black/20 backdrop-blur-xl shadow-2xl transition-transform duration-500 group-hover:scale-105"></div>
               <div
                 className={`absolute -inset-1 rounded-full border-2 border-t-[#00ff87] border-r-transparent border-b-transparent border-l-transparent animate-[spin_4s_linear_infinite] opacity-50`}
@@ -604,25 +443,27 @@ export default function App() {
                 className="absolute inset-2 w-[calc(100%-16px)] h-[calc(100%-16px)] object-cover rounded-full z-10 transition-transform duration-500 group-hover:scale-105"
               />
             </div>
+            
             <h2
-              className={`text-3xl md:text-4xl font-bold mb-4 tracking-wide ${
+              className={`text-2xl md:text-4xl font-bold mb-4 tracking-wide ${
                 isDark ? 'text-white' : 'text-black'
               }`}
             >
               Hi, I'm {PORTFOLIO_DATA.personalInfo.name}
             </h2>
+            
             <div
-              className={`inline-block mb-8 px-6 py-2 rounded-full ${
+              className={`inline-block mb-6 md:mb-8 px-4 md:px-6 py-1.5 md:py-2 rounded-full ${
                 isDark
                   ? 'bg-[#00ff87]/10 border-[#00ff87]/20 text-[#00ff87]'
                   : 'bg-[#00ff87]/20 border-[#00ff87]/40 text-emerald-800'
-              } text-xs font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(0,255,135,0.2)]`}
+              } text-[10px] md:text-xs font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(0,255,135,0.2)]`}
             >
               {PORTFOLIO_DATA.personalInfo.role}
             </div>
 
             <h1
-              className={`text-6xl md:text-8xl font-black mb-6 tracking-tighter ${
+              className={`text-5xl sm:text-6xl md:text-8xl font-black mb-4 md:mb-6 tracking-tighter ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}
             >
@@ -638,55 +479,52 @@ export default function App() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-base md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
               {PORTFOLIO_DATA.personalInfo.tagline}
             </p>
           </div>
         </section>
 
-        {/* ====== قسم العملاء (CLIENTS SECTION) ====== */}
-        <section id="clients" className="py-24 md:py-32 relative z-10">
-          <div className="container mx-auto px-6 mb-12 text-center">
+        {/* ====== قسم العملاء (CLIENTS SECTION) بالشريحة الزجاجية ====== */}
+        <section id="clients" className="py-16 md:py-32 overflow-hidden border-y border-white/5 dark:border-white/5 bg-white/10 dark:bg-[#050505]/40 backdrop-blur-md">
+          <div className="container mx-auto px-4 md:px-6 mb-10 md:mb-16 text-center">
             <h2
-              className={`text-3xl md:text-4xl font-bold mb-4 tracking-tighter ${
+              className={`text-3xl md:text-4xl font-bold mb-3 tracking-tighter ${
                 isDark ? 'text-white' : 'text-black'
               }`}
             >
               Trusted by the{' '}
               <span style={{ color: vibrantEmerald }}>Best.</span>
             </h2>
-            <p className="text-sm md:text-base font-medium tracking-[0.2em] uppercase text-gray-500 dark:text-gray-400">
+            <p className="text-xs md:text-base font-medium tracking-[0.2em] uppercase text-gray-500 dark:text-gray-400">
               Partners & Clients globally
             </p>
           </div>
 
-          <div className="container mx-auto px-6 max-w-6xl">
-            {/* الشريحة الزجاجية لعرض الشعارات */}
-            <div className={`${glassCard} p-10 md:p-16`}>
-              <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-                {PORTFOLIO_DATA.clients.map((client) => (
-                  <div
-                    key={client.id}
-                    className="flex items-center justify-center transition-transform duration-500 hover:scale-110"
-                  >
-                    <img
-                      src={client.logo}
-                      alt={client.name}
-                      className="h-10 md:h-14 lg:h-16 w-auto object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className={`${glassCard} p-8 md:p-12 flex flex-wrap justify-center items-center gap-8 md:gap-14`}>
+              {PORTFOLIO_DATA.clients.map((client) => (
+                <div
+                  key={client.id}
+                  className="flex justify-center items-center hover:scale-110 transition-transform duration-300"
+                >
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="h-8 sm:h-10 md:h-14 lg:h-16 w-auto object-contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* ====== قسم الأعمال (WORK SECTION) - المعرض الأفقي ====== */}
-        <section id="work" className="py-32 overflow-hidden">
+        <section id="work" className="py-16 md:py-32 overflow-hidden">
           <div className="container mx-auto px-6 max-w-[90rem]">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-12 gap-6">
               <h2
-                className={`text-5xl md:text-7xl font-black tracking-tighter ${
+                className={`text-4xl md:text-7xl font-black tracking-tighter ${
                   isDark ? 'text-white' : 'text-black'
                 }`}
               >
@@ -694,7 +532,7 @@ export default function App() {
                 <span style={{ color: vibrantEmerald }}>Works.</span>
               </h2>
 
-              <div className="flex flex-wrap gap-2 max-w-2xl justify-end">
+              <div className="flex flex-wrap gap-2 max-w-2xl justify-start md:justify-end">
                 {categories.map((category, index) => (
                   <button
                     key={index}
@@ -706,7 +544,7 @@ export default function App() {
                           behavior: 'smooth',
                         });
                     }}
-                    className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 border ${
+                    className={`px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 border ${
                       activeFilter === category
                         ? `text-black border-transparent shadow-[0_0_15px_rgba(0,255,135,0.4)]`
                         : `bg-white/5 dark:bg-black/20 border-white/20 dark:border-white/10 ${
@@ -731,21 +569,21 @@ export default function App() {
           <div className="relative group w-full max-w-[100vw]">
             <button
               onClick={() => scrollGallery('left')}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-4 rounded-full bg-black/60 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity hidden md:block hover:bg-black hover:scale-110 border border-white/10"
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-black/60 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity hidden md:block hover:bg-black hover:scale-110 border border-white/10"
             >
-              <ArrowLeft size={24} />
+              <ArrowLeft size={20} />
             </button>
             <button
               onClick={() => scrollGallery('right')}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-4 rounded-full bg-black/60 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity hidden md:block hover:bg-black hover:scale-110 border border-white/10"
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-black/60 text-white backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity hidden md:block hover:bg-black hover:scale-110 border border-white/10"
             >
-              <ArrowRight size={24} />
+              <ArrowRight size={20} />
             </button>
 
             {/* المعرض الأفقي */}
             <div
               ref={galleryRef}
-              className="flex overflow-x-auto gap-6 md:gap-10 px-6 md:px-12 pb-12 pt-4 snap-x snap-mandatory hide-scrollbar w-full"
+              className="flex overflow-x-auto gap-4 md:gap-10 px-6 md:px-12 pb-8 pt-4 snap-x snap-mandatory hide-scrollbar w-full"
             >
               {filteredProjects.map((project) => (
                 <div
@@ -753,7 +591,7 @@ export default function App() {
                   className="flex-none w-[85vw] md:w-[75vw] lg:w-[900px] snap-center"
                 >
                   <div
-                    className={`relative w-full h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden shadow-2xl border ${
+                    className={`relative w-full h-[40vh] md:h-[70vh] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl border ${
                       isDark ? 'border-white/10' : 'border-black/5'
                     } group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500`}
                   >
@@ -763,14 +601,14 @@ export default function App() {
                       className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 flex flex-col justify-end pointer-events-none">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 flex flex-col justify-end pointer-events-none">
                       <span
-                        className="font-bold uppercase tracking-widest text-sm mb-3 drop-shadow-md"
+                        className="font-bold uppercase tracking-widest text-xs md:text-sm mb-2 md:mb-3 drop-shadow-md"
                         style={{ color: vibrantEmerald }}
                       >
                         {project.category}
                       </span>
-                      <h3 className="text-white text-3xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-lg">
+                      <h3 className="text-white text-2xl md:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-lg leading-tight">
                         {project.title}
                       </h3>
                     </div>
@@ -789,22 +627,22 @@ export default function App() {
         {/* ====== قسم البرامج والأدوات (3D GLASS CARDS) ====== */}
         <section
           id="tools"
-          className="py-32 px-6 border-t border-white/5 dark:border-white/5 relative"
+          className="py-16 md:py-32 px-6 border-t border-white/5 dark:border-white/5 relative"
         >
           <div className="container mx-auto max-w-5xl">
             <h2
-              className={`text-5xl md:text-7xl font-black mb-20 tracking-tighter text-center ${
+              className={`text-4xl md:text-7xl font-black mb-12 md:mb-20 tracking-tighter text-center ${
                 isDark ? 'text-white' : 'text-black'
               }`}
             >
               My <span style={{ color: vibrantEmerald }}>Toolkit.</span>
             </h2>
 
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-10">
               {PORTFOLIO_DATA.software.map((item) => (
                 <div
                   key={item.id}
-                  className={`relative w-28 h-28 md:w-36 md:h-36 rounded-[2rem] flex flex-col items-center justify-center group transition-all duration-500 hover:-translate-y-3 cursor-default overflow-hidden
+                  className={`relative w-24 h-24 md:w-36 md:h-36 rounded-2xl md:rounded-[2rem] flex flex-col items-center justify-center group transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-3 cursor-default overflow-hidden
                   ${
                     isDark
                       ? 'bg-white/5 border border-white/10 shadow-[inset_2px_2px_15px_rgba(255,255,255,0.05),_inset_-2px_-2px_15px_rgba(0,0,0,0.2),_0_10px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_15px_40px_rgba(0,255,135,0.2)] hover:border-[#00ff87]/40'
@@ -816,11 +654,11 @@ export default function App() {
                   <img
                     src={item.logo}
                     alt={item.name}
-                    className="w-10 h-10 md:w-14 md:h-14 mb-2 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform duration-500"
+                    className="w-8 h-8 md:w-14 md:h-14 mb-2 filter drop-shadow-[0_4px_8px_rgba(0,0,0,0.2)] group-hover:scale-110 transition-transform duration-500"
                   />
 
                   <span
-                    className={`font-semibold text-xs md:text-sm tracking-wide transition-colors duration-300 ${
+                    className={`font-semibold text-[10px] md:text-sm tracking-wide text-center px-1 transition-colors duration-300 ${
                       isDark
                         ? 'text-gray-300 group-hover:text-[#00ff87]'
                         : 'text-gray-600 group-hover:text-emerald-600'
@@ -835,12 +673,12 @@ export default function App() {
         </section>
 
         {/* ====== قسم نبذة عني (ABOUT SECTION) ====== */}
-        <section id="about" className="py-32 px-6 relative">
+        <section id="about" className="py-16 md:py-32 px-6 relative">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
               <div>
                 <h2
-                  className={`text-5xl md:text-7xl font-black mb-8 tracking-tighter ${
+                  className={`text-4xl md:text-7xl font-black mb-6 md:mb-8 tracking-tighter ${
                     isDark ? 'text-white' : 'text-black'
                   }`}
                 >
@@ -848,17 +686,17 @@ export default function App() {
                   <span style={{ color: vibrantEmerald }}>Aesthetics.</span>
                 </h2>
                 <div
-                  className={`${glassCard} p-10 relative overflow-hidden group`}
+                  className={`${glassCard} p-6 md:p-10 relative overflow-hidden group`}
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#00ff87]/10 rounded-full blur-3xl group-hover:bg-[#00ff87]/20 transition-colors duration-500"></div>
-                  <p className="text-lg mb-8 leading-relaxed font-light relative z-10 text-gray-700 dark:text-gray-300">
+                  <p className="text-sm md:text-lg mb-6 md:mb-8 leading-relaxed font-light relative z-10 text-gray-700 dark:text-gray-300">
                     {PORTFOLIO_DATA.personalInfo.bio}
                   </p>
-                  <div className="flex flex-wrap gap-3 relative z-10">
+                  <div className="flex flex-wrap gap-2 md:gap-3 relative z-10">
                     {PORTFOLIO_DATA.skills.map((skill, i) => (
                       <span
                         key={i}
-                        className={`px-4 py-2 rounded-full text-sm font-medium border ${
+                        className={`px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium border ${
                           isDark
                             ? 'border-white/10 bg-white/5 text-gray-300'
                             : 'border-black/10 bg-black/5 text-gray-700'
@@ -871,7 +709,7 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden group shadow-2xl">
+              <div className="relative h-[400px] md:h-[600px] w-full rounded-3xl md:rounded-[2.5rem] overflow-hidden group shadow-2xl">
                 <div
                   className={`absolute inset-0 bg-gradient-to-tr ${
                     isDark
@@ -890,10 +728,10 @@ export default function App() {
         </section>
 
         {/* ====== قسم التواصل (CONTACT SECTION) ====== */}
-        <section id="contact" className="py-32 px-6">
+        <section id="contact" className="py-16 md:py-32 px-6">
           <div className="container mx-auto max-w-4xl text-center">
             <h2
-              className={`text-6xl md:text-8xl font-black mb-8 tracking-tighter ${
+              className={`text-4xl sm:text-6xl md:text-8xl font-black mb-6 md:mb-8 tracking-tighter ${
                 isDark ? 'text-white' : 'text-black'
               }`}
             >
@@ -909,12 +747,12 @@ export default function App() {
             </h2>
 
             <div
-              className={`${glassCard} p-12 md:p-20 mt-16 max-w-3xl mx-auto flex flex-col items-center gap-8 border-t-4`}
+              className={`${glassCard} p-8 md:p-20 mt-10 md:mt-16 max-w-3xl mx-auto flex flex-col items-center gap-6 md:gap-8 border-t-4`}
               style={{ borderTopColor: vibrantEmerald }}
             >
               <a
                 href={`mailto:${PORTFOLIO_DATA.personalInfo.email}`}
-                className={`text-3xl md:text-5xl lg:text-6xl font-black tracking-tight transition-all hover:scale-105 inline-block break-all ${
+                className={`text-xl sm:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight transition-all hover:scale-105 inline-block break-all ${
                   isDark ? 'text-white' : 'text-black'
                 }`}
                 style={{
@@ -931,7 +769,7 @@ export default function App() {
                   /\s/g,
                   ''
                 )}`}
-                className={`text-2xl md:text-4xl font-medium tracking-wide transition-all hover:scale-105 inline-block ${
+                className={`text-lg sm:text-2xl md:text-4xl font-medium tracking-wide transition-all hover:scale-105 inline-block ${
                   isDark ? 'text-gray-400' : 'text-gray-600'
                 }`}
                 onMouseOver={(e) => (e.target.style.color = vibrantEmerald)}
@@ -945,7 +783,7 @@ export default function App() {
       </main>
 
       {/* ====== التذييل (FOOTER) ====== */}
-      <footer className="py-10 text-center border-t border-gray-500/10 text-sm font-medium tracking-wide relative z-10 text-gray-500 dark:text-gray-500 bg-white/5 dark:bg-black/20 backdrop-blur-sm">
+      <footer className="py-8 md:py-10 text-center border-t border-gray-500/10 text-xs md:text-sm font-medium tracking-wide relative z-10 text-gray-500 dark:text-gray-500 bg-white/5 dark:bg-black/20 backdrop-blur-sm">
         <p>
           © {new Date().getFullYear()} {PORTFOLIO_DATA.personalInfo.name}.
           Designed with precision.
